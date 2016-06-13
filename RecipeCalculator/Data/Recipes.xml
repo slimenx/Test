@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Recipes>
+  
+  <Recipe id="1">
+    <Ingredient id="1" amount="1"/>
+    <Ingredient id="2" amount="1"/>
+    <Ingredient id="7" amount="0.75"/>
+    <Ingredient id="9" amount="0.75"/>
+    <Ingredient id="10" amount="0.5"/>
+  </Recipe>
+
+  <Recipe id="2">
+    <Ingredient id="1" amount="1"/>
+    <Ingredient id="4" amount="4"/>
+    <Ingredient id="7" amount="0.5"/>
+    <Ingredient id="8" amount="0.5"/>
+  </Recipe>
+
+  <Recipe id="3">
+    <Ingredient id="1" amount="1"/>
+    <Ingredient id="3" amount="4"/>
+    <Ingredient id="5" amount="4"/>
+    <Ingredient id="6" amount="8"/>
+    <Ingredient id="7" amount="0.33"/>
+    <Ingredient id="9" amount="1.25"/>
+    <Ingredient id="10" amount="0.75"/>
+  </Recipe>
+  
+  
+</Recipes>

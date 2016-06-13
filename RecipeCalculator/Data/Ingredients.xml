@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Ingredients>
+  
+  <Ingredient id="1" name="Garlic Clove" price="0.67" isOrganic="true" type="Produce"/>
+  <Ingredient id="2" name="Lemon" price="2.03" isOrganic="false" type="Produce"/>
+  <Ingredient id="3" name="Cup of Corn" price="0.87" isOrganic="false" type="Produce"/>
+
+  <Ingredient id="4" name="Chicken Breast" price="2.19" isOrganic="false" type="Meat"/>
+  <Ingredient id="5" name="Slice of Bacon" price="0.24" isOrganic="false" type="Meat"/>
+
+  <Ingredient id="6" name="Ounce of Pasta" price="0.31" isOrganic="false" type="Pantry"/>
+  <Ingredient id="7" name="Cup of Olive oil" price="1.92" isOrganic="true" type="Pantry"/>
+  <Ingredient id="8" name="Cup of Vinegar" price="1.26" isOrganic="false" type="Pantry"/>
+  <Ingredient id="9" name="Teaspoon of Salt" price="0.16" isOrganic="false" type="Pantry"/>
+  <Ingredient id="10" name="Teaspoon of Pepper" price="0.17" isOrganic="false" type="Pantry"/>
+  
+</Ingredients>
