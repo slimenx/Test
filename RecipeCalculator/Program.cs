@@ -1,13 +1,7 @@
-﻿using RecipeCalculator.Model;
+﻿using RecipeCalculator.Helpers;
+using RecipeCalculator.Model;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml;
-using System.Xml.Serialization;
-
-using RecipeCalculator.Helpers;
 
 namespace RecipeCalculator
 {
@@ -35,55 +29,43 @@ namespace RecipeCalculator
 
             foreach (RecipesRecipe recipe in recipes)
             {
-                //Console.WriteLine($"Recipe {recipe.id}:");
+
                 decimal sum = 0;
                 decimal discount = 0;
                 decimal tax = 0;
 
-                bool isWell = false;
                 foreach (RecipesRecipeIngredient recipeIngredient in recipe.Ingredient)
                 {
                     IngredientsIngredient ingredient = ingredients.First(i => i.id == recipeIngredient.id);
-
-                    //FancyConsole.Write($"{ingredient.name}", 0);
-                    //FancyConsole.Write($"{ingredient.price}", 20);
-                    //FancyConsole.Write($"{recipeIngredient.amount}", 30);
-
                     decimal total = (ingredient.price * recipeIngredient.amount);
 
+                    //is used for 1/3
                     if (recipeIngredient.amount == 0.33M)
                     {
                         total = ingredient.price / 3;
                     }
-                    
+
                     sum += total;
-
-                    //FancyConsole.Write(total.ToString(), 70);
-
                     decimal d = 0;
 
                     if (ingredient.isOrganic)
                     {
                         d = total * WELLNESSDISCOUNT;
-
-                        //FancyConsole.Write(d.ToString(), 40);
                         discount += d;
                     }
+
                     if (ingredient.type != "Produce")
                     {
                         decimal t = total * SALETAX;
-                        //FancyConsole.Write(t.ToString(), 50);
                         tax += t;
                     }
-                    //Console.WriteLine();
                 }
 
-                discount = Math.Ceiling(discount * 100) / 100;
-                tax = Math.Ceiling(tax / 0.07M) * 0.07M;
+                discount = Math.Ceiling(discount * 100) / 100; //rounding up to the nearest cent
+                tax = Math.Ceiling(tax / 0.07M) * 0.07M; //rounding up to the nearest 7th cent
 
-
+                //fancy output box
                 int leftWall = 21;
-
                 Console.WriteLine($"-------Recipe {recipe.id}-------");
                 Console.Write($"Sum:\t\t{sum.ToString("0.00")}");
                 FancyConsole.Write("|", leftWall, true);
@@ -93,11 +75,10 @@ namespace RecipeCalculator
                 FancyConsole.Write("|", leftWall, true);
                 Console.Write($"Total:\t\t{(sum + tax - discount).ToString("0.00")}");
                 FancyConsole.Write("|", leftWall, true);
-                //Console.WriteLine("-----------------------------------------");
             }
+
+            //bottom of fancy output box
             Console.WriteLine("----------------------");
-
-
             Console.ReadKey();
         }
     }

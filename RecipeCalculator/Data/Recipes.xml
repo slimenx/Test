@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Recipes>
-  
+
   <Recipe id="1">
     <Ingredient id="1" amount="1"/>
     <Ingredient id="2" amount="1"/>
@@ -25,6 +25,5 @@
     <Ingredient id="9" amount="1.25"/>
     <Ingredient id="10" amount="0.75"/>
   </Recipe>
-  
-  
+
 </Recipes>

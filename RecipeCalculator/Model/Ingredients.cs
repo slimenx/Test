@@ -1,23 +1,17 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Xml.Serialization;
 
 namespace RecipeCalculator.Model
 {
-
     /// <remarks/>
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "", IsNullable = false)]
+    [XmlTypeAttribute(AnonymousType = true)]
+    [XmlRoot(Namespace = "", IsNullable = false)]
     public partial class Ingredients
     {
 
         private IngredientsIngredient[] ingredientField;
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("Ingredient")]
+        [XmlElement("Ingredient")]
         public IngredientsIngredient[] Ingredient
         {
             get
@@ -32,7 +26,7 @@ namespace RecipeCalculator.Model
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+    [XmlType(AnonymousType = true)]
     public partial class IngredientsIngredient
     {
 
@@ -47,7 +41,7 @@ namespace RecipeCalculator.Model
         private string typeField;
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [XmlAttribute()]
         public byte id
         {
             get
@@ -61,7 +55,7 @@ namespace RecipeCalculator.Model
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [XmlAttribute()]
         public string name
         {
             get
@@ -75,7 +69,7 @@ namespace RecipeCalculator.Model
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [XmlAttribute()]
         public decimal price
         {
             get
@@ -89,7 +83,7 @@ namespace RecipeCalculator.Model
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [XmlAttribute()]
         public bool isOrganic
         {
             get
@@ -103,7 +97,7 @@ namespace RecipeCalculator.Model
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [XmlAttribute()]
         public string type
         {
             get
@@ -116,6 +110,4 @@ namespace RecipeCalculator.Model
             }
         }
     }
-
-
 }

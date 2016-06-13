@@ -1,22 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Xml.Serialization;
 
 namespace RecipeCalculator.Model
 {
-
     /// <remarks/>
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "", IsNullable = false)]
+    [XmlTypeAttribute(AnonymousType = true)]
+    [XmlRootAttribute(Namespace = "", IsNullable = false)]
     public partial class Recipes
     {
 
         private RecipesRecipe[] recipeField;
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("Recipe")]
+        [XmlElementAttribute("Recipe")]
         public RecipesRecipe[] Recipe
         {
             get
@@ -31,7 +26,7 @@ namespace RecipeCalculator.Model
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+    [XmlTypeAttribute(AnonymousType = true)]
     public partial class RecipesRecipe
     {
 
@@ -40,7 +35,7 @@ namespace RecipeCalculator.Model
         private byte idField;
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("Ingredient")]
+        [XmlElementAttribute("Ingredient")]
         public RecipesRecipeIngredient[] Ingredient
         {
             get
@@ -54,7 +49,7 @@ namespace RecipeCalculator.Model
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [XmlAttributeAttribute()]
         public byte id
         {
             get
@@ -69,7 +64,7 @@ namespace RecipeCalculator.Model
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+    [XmlTypeAttribute(AnonymousType = true)]
     public partial class RecipesRecipeIngredient
     {
 
@@ -78,7 +73,7 @@ namespace RecipeCalculator.Model
         private decimal amountField;
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [XmlAttributeAttribute()]
         public byte id
         {
             get
@@ -92,7 +87,7 @@ namespace RecipeCalculator.Model
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [XmlAttributeAttribute()]
         public decimal amount
         {
             get
@@ -105,6 +100,4 @@ namespace RecipeCalculator.Model
             }
         }
     }
-
-
 }
